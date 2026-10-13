@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modern Login Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #05070d;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Background glow */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: #006eff;
+            filter: blur(180px);
+            opacity: 0.15;
+            animation: backgroundGlow 5s infinite alternate;
+        }
+
+        /* Login container */
+        .login-container {
+            position: relative;
+            width: 380px;
+            padding: 45px 40px;
+            background: rgba(15, 20, 30, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 110, 255, 0.15);
+            text-align: center;
+
+            animation: entrance 1s ease forwards;
+        }
+
+        /* Lamp */
+        .lamp {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lamp::before {
+            content: "";
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background: #4da3ff;
+            border-radius: 50%;
+            box-shadow:
+                0 0 15px #4da3ff,
+                0 0 35px #1685ff,
+                0 0 70px #006eff,
+                0 0 120px #006eff;
+            animation: lampGlow 2s infinite alternate;
+        }
+
+        .lamp::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(0, 110, 255, 0.12);
+            filter: blur(15px);
+            animation: lampAura 2s infinite alternate;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: #8993a4;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        /* Input fields */
+        .input-box {
+            position: relative;
+            margin-bottom: 18px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 15px 16px;
+            background: #0a0f18;
+            color: white;
+            border: 1px solid #252d3a;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s ease;
+        }
+
+        .input-box input:focus {
+            border-color: #1685ff;
+            box-shadow: 0 0 15px rgba(22, 133, 255, 0.25);
+        }
+
+        .input-box input::placeholder {
+            color: #687386;
+        }
+
+        /* Login button */
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 10px;
+            background: #087cff;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0 0 15px rgba(8, 124, 255, 0.35);
+        }
+
+        .login-btn:hover {
+            background: #2991ff;
+            transform: translateY(-3px);
+            box-shadow:
+                0 0 20px rgba(8, 124, 255, 0.6),
+                0 0 40px rgba(8, 124, 255, 0.25);
+        }
+
+        .login-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Dashboard link */
+        .dashboard-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #4da3ff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .dashboard-link:hover {
+            color: white;
+            text-shadow: 0 0 10px #1685ff;
+        }
+
+        .footer {
+            margin-top: 25px;
+            color: #505a6b;
+            font-size: 12px;
+        }
+
+        /* Animations */
+        @keyframes entrance {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes lampGlow {
+            from {
+                transform: scale(0.9);
+                opacity: 0.7;
+            }
+
+            to {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes lampAura {
+            from {
+                transform: scale(0.8);
+                opacity: 0.3;
+            }
+
+            to {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes backgroundGlow {
+            from {
+                transform: scale(0.8);
+                opacity: 0.1;
+            }
+
+            to {
+                transform: scale(1.2);
+                opacity: 0.2;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 450px) {
+            .login-container {
+                width: 90%;
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- Glowing Lamp -->
+        <div class="lamp"></div>
+
+        <h1>Welcome Back</h1>
+
+        <p class="subtitle">
+            Login to continue to your account
+        </p>
+
+        <!-- Login Form -->
+        <form>
+
+            <div class="input-box">
+                <input
+                    type="email"
+                    placeholder="Email Address"
+                    required>
+            </div>
+
+            <div class="input-box">
+                <input
+                    type="password"
+                    placeholder="Password"
+                    required>
+            </div>
+
+            <button type="submit" class="login-btn">
+                LOGIN
+            </button>
+
+        </form>
+
+        <!-- Dashboard Anchor -->
+        <a href="dashboard.html" class="dashboard-link">
+            Access Dashboard →
+        </a>
+
+        <p class="footer">
+            © 2026 Modern Login UI
+        </p>
+
+    </div>
+<a href="homepage.html" class="home-link">
+    ← Home page
+</a>
+
+<style>
+    .home-link {
+        display: inline-block;
+        margin-top: 15px;
+        color: #4da3ff;
+        text-decoration: none;
+        transition: 0.3s ease;
+    }
+
+    .home-link:hover {
+        color: white;
+        text-shadow: 0 0 10px #1685ff;
+        transform: translateX(-5px);
+    }
+</style>
+</body>
+</html>

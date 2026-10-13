@@ -1,0 +1,70 @@
+body {background: radial-gradient(circle at 50% 40%, #0b7fd4 0%, #0a2a5e 55%, #020617 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      color: #ffffff;
+}
+h1, h2, h3, p, li, a{color: #ffffff;}
+/*accent headings (tagline, "welcome....", "OUR BRANDING PRODUCTS")/*
+h2, h3{ color:#67e8f9;
+        text-shadow:0 0 12px rgba(34, 211, 238, 0.5);
+}
+hr, divider{ border-color:#22d3ee;
+            background: #22d3ee;
+}
+input[type="type"], input[type="search"], input{
+background:rgba(255,255,255,0.15);
+border:1px solid rgba(255, 255, 255, 0.35);
+color:#fff;
+backdrop-filter:blur(10px);
+}
+input::placeholder{color:rgba(255, 255, 255, 0.8);}
+button{background:#ffffff;
+       color:#0a2a5e;
+       border:none;
+       box-shadow:0 0 18px rgba(34, 211, 238, 0.6)
+}
+/*product boxes*/
+.product, .card, product-card{background: rgba(255, 255, 255, 0.12);
+                              border: 1px solid rgba(255, 255, 255, 0.12);
+                              border-radius: 16px;
+                              backdrop-filter: blur(12px);
+                              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+                            }
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px auto;
+    gap: 8px;
+}
+
+.search-container input {
+    width: 450px;
+    padding: 14px 20px;
+    border: 2px solid #ffb000;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-container input:focus {
+    box-shadow: 0 0 15px rgba(255, 176, 0, 0.5);
+}
+
+.search-container button {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ffb000;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    transform: scale(1.05);
+    background: #e69500;
+}
+        
